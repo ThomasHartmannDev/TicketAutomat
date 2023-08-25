@@ -167,11 +167,15 @@ public class TicketMachine {
                 System.out.printf("You need to pay: %.2f\n", calcValue);
             }
 
-            while(balance != total){
+            while(balance < total){
                 System.out.println("Insert a coin: ");
                 double insertedCoin = scannerIn.nextDouble();
                 insertCoin(insertedCoin);
                 System.out.printf("Balance: %.2f\n", balance);
+            }
+            if(balance > total){
+                double value = balance - total;
+                System.out.printf("Return: %.2f\n", value);
             }
             return true;
         }
