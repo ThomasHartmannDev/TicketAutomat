@@ -32,7 +32,8 @@ public class Main {
                    case 1: ticketMachine.zoneIDSetter(); System.out.println(ticketMachine); break;
                    case 2: ticketMachine.ticketSetter(); System.out.println(ticketMachine); break;
                    case 3: if(ticketMachine.pay()){
-                       System.out.println(ticketMachine);
+                       //System.out.println(ticketMachine);
+                       ticketMachine.printTicket();
                        ticketMachine.reset();
                    }
                        System.out.println(ticketMachine);

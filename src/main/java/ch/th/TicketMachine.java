@@ -14,7 +14,6 @@ public class TicketMachine {
     private final double zonePrice;
     private final int firstClassPrice;
     private final int secondClassPrice;
-
     List<Double> money = new ArrayList<>();
     Scanner scannerIn = new Scanner(System.in);
 
@@ -182,8 +181,25 @@ public class TicketMachine {
         if(zoneID == 0){
             System.out.println("You need to chose a Zone");
             return false;
-        }
+        } // Ticket is always preseted as Second class and Not Half
         return true;
+    }
+
+    public void printTicket() {
+        System.out.println("+----------------------------+");
+        System.out.println("|            Ticket          |");
+        System.out.println("+----------------------------+");
+        System.out.println("Ticket");
+        System.out.println("Zone: " + zoneID);
+        System.out.println("Half Ticket: " + halfTicket);
+        System.out.println("Price: " + total);
+        System.out.println("+----------------------------+");
+        System.out.println("|                            |");
+        System.out.println("+----------------------------+");
+        System.out.println("Press enter to continue.");
+        String line;
+        scannerIn.nextLine(); // Consume the newline character
+        line = scannerIn.nextLine(); // This should work as expected
     }
 
     public boolean pay(){
@@ -225,9 +241,9 @@ public class TicketMachine {
         }
         return false;
 
-
-        //return false;
     }
+
+
     @Override
     public String toString() {
         return "TicketMachine{" +
